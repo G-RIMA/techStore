@@ -37,6 +37,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 1rem 0;
+        gap: 2rem;
       }
 
       .logo {
@@ -48,11 +49,32 @@
         background-clip: text;
       }
 
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: #374151;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        background: rgba(99, 102, 241, 0.1);
+        color: #6366f1;
+      }
+
       .search-bar {
         flex: 1;
-        max-width: 500px;
-        margin: 0 2rem;
-        position: relative;
+        max-width: 400px;
       }
 
       .search-bar input {
@@ -107,6 +129,16 @@
         justify-content: center;
       }
 
+      /* Page Sections */
+      .page {
+        display: none;
+        min-height: calc(100vh - 80px);
+      }
+
+      .page.active {
+        display: block;
+      }
+
       /* Hero Banner */
       .hero-banner {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -148,6 +180,7 @@
       /* Categories */
       .categories {
         margin-bottom: 3rem;
+        padding: 2rem 0;
       }
 
       .categories h2 {
@@ -191,6 +224,7 @@
       /* Products */
       .products {
         margin-bottom: 3rem;
+        padding: 2rem 0;
       }
 
       .products h2 {
@@ -275,6 +309,228 @@
 
       .add-to-cart:hover {
         background: #5b59f1;
+      }
+
+      /* Products Page */
+      .products-header {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .filters {
+        background: white;
+        padding: 2rem 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .filter-controls {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .filter-group select {
+        padding: 0.5rem 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        background: white;
+      }
+
+      /* Cart Page */
+      .cart-items {
+        margin-bottom: 2rem;
+      }
+
+      .cart-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 15px;
+        margin-bottom: 1rem;
+        background: white;
+      }
+
+      .cart-item-image {
+        width: 120px;
+        height: 80px;
+        background: linear-gradient(135deg, #e5e7eb, #f3f4f6);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+      }
+
+      .cart-item-info {
+        flex: 1;
+      }
+
+      .cart-item-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .cart-item-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #6366f1;
+      }
+
+      .cart-item-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #f1f5f9;
+        padding: 0.5rem;
+        border-radius: 8px;
+      }
+
+      .quantity-btn {
+        background: #6366f1;
+        color: white;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .remove-btn {
+        background: #ef4444;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .cart-summary {
+        background: #f8fafc;
+        padding: 2rem;
+        border-radius: 15px;
+        position: sticky;
+        top: 100px;
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .summary-row:last-child {
+        border-bottom: none;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      /* Checkout Page */
+      .checkout-form {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 3rem;
+      }
+
+      .form-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      .form-section h3 {
+        margin-bottom: 1.5rem;
+        color: #1e293b;
+        font-size: 1.25rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #374151;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #6366f1;
+      }
+
+      .order-summary {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        height: fit-content;
+        position: sticky;
+        top: 100px;
+      }
+
+      .checkout-btn {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .checkout-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
       }
 
       /* Newsletter */
@@ -406,9 +662,13 @@
           gap: 1rem;
         }
 
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
         .search-bar {
           order: 3;
-          margin: 0;
           max-width: none;
         }
 
@@ -419,6 +679,23 @@
         .newsletter-form {
           flex-direction: column;
         }
+
+        .checkout-form {
+          grid-template-columns: 1fr;
+        }
+
+        .cart-item {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      /* Page title styling */
+      .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #1e293b;
       }
     </style>
   </head>
@@ -428,11 +705,26 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">TechStore</div>
-          <div class="search-bar">
-            <input type="text" placeholder="Search products..." />
-          </div>
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a href="#" onclick="showPage('home')" class="active">Home</a>
+              </li>
+              <li><a href="#" onclick="showPage('products')">Products</a></li>
+              <li><a href="#" onclick="showPage('about')">About</a></li>
+              <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+          </nav>
           <div class="header-actions">
-            <button class="cart-btn" onclick="openCart()">
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Search products..."
+                id="searchInput"
+                onkeyup="searchProducts()"
+              />
+            </div>
+            <button class="cart-btn" onclick="showPage('cart')">
               Cart <span class="cart-count" id="cartCount">0</span>
             </button>
           </div>
@@ -440,58 +732,263 @@
       </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
+    <!-- Home Page -->
+    <div id="home" class="page active">
+      <!-- Hero Banner -->
+      <section class="hero-banner">
+        <div class="container">
+          <h1>Premium Electronics</h1>
+          <p>
+            Discover the latest technology with unbeatable prices and fast
+            shipping
+          </p>
+          <button class="shop-now-btn" onclick="showPage('products')">
+            Shop Now
+          </button>
+        </div>
+      </section>
+
+      <!-- Categories -->
+      <section class="categories">
+        <div class="container">
+          <h2>Shop by Category</h2>
+          <div class="category-grid">
+            <div
+              class="category-card"
+              onclick="showPage('products'); setTimeout(() => filterProducts('smartphones'), 100)"
+            >
+              <div class="category-icon">📱</div>
+              <h3>Smartphones</h3>
+              <p>Latest models</p>
+            </div>
+            <div
+              class="category-card"
+              onclick="showPage('products'); setTimeout(() => filterProducts('laptops'), 100)"
+            >
+              <div class="category-icon">💻</div>
+              <h3>Laptops</h3>
+              <p>High performance</p>
+            </div>
+            <div
+              class="category-card"
+              onclick="showPage('products'); setTimeout(() => filterProducts('headphones'), 100)"
+            >
+              <div class="category-icon">🎧</div>
+              <h3>Headphones</h3>
+              <p>Premium audio</p>
+            </div>
+            <div
+              class="category-card"
+              onclick="showPage('products'); setTimeout(() => filterProducts('watches'), 100)"
+            >
+              <div class="category-icon">⌚</div>
+              <h3>Smart Watches</h3>
+              <p>Stay connected</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Products -->
+      <section class="products">
+        <div class="container">
+          <h2>Featured Products</h2>
+          <div class="product-grid" id="featuredProducts">
+            <!-- Featured products will be loaded here -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+      <div class="products-header">
+        <div class="container">
+          <h1>All Products</h1>
+          <p>Find the perfect tech products for your needs</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <div class="container">
+          <div class="filter-controls">
+            <div class="filter-group">
+              <label>Category:</label>
+              <select id="categoryFilter" onchange="filterProducts()">
+                <option value="">All Categories</option>
+                <option value="smartphones">Smartphones</option>
+                <option value="laptops">Laptops</option>
+                <option value="headphones">Headphones</option>
+                <option value="watches">Watches</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>Price Range:</label>
+              <select id="priceFilter" onchange="filterProducts()">
+                <option value="">All Prices</option>
+                <option value="0-500">Under $500</option>
+                <option value="500-1000">$500 - $1000</option>
+                <option value="1000-2000">$1000 - $2000</option>
+                <option value="2000-999999">Above $2000</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label>Brand:</label>
+              <select id="brandFilter" onchange="filterProducts()">
+                <option value="">All Brands</option>
+                <option value="Apple">Apple</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Dell">Dell</option>
+                <option value="Sony">Sony</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
-        <h1>Premium Electronics</h1>
-        <p>
-          Discover the latest technology with unbeatable prices and fast
-          shipping
+        <div class="product-grid" id="allProducts">
+          <!-- All products will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Page -->
+    <div id="cart" class="page">
+      <div class="container">
+        <h1 class="page-title">Your Cart</h1>
+        <div class="checkout-form">
+          <div>
+            <div class="cart-items" id="cartItems">
+              <!-- Cart items will be loaded here -->
+            </div>
+          </div>
+          <div class="cart-summary" id="cartSummary">
+            <!-- Cart summary will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Page -->
+    <div id="checkout" class="page">
+      <div class="container">
+        <h1 class="page-title">Checkout</h1>
+        <form class="checkout-form" onsubmit="processOrder(event)">
+          <div>
+            <div class="form-section">
+              <h3>Personal Information</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" required />
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" required />
+                </div>
+                <div class="form-group full-width">
+                  <label>Email</label>
+                  <input type="email" required />
+                </div>
+                <div class="form-group full-width">
+                  <label>Phone</label>
+                  <input type="tel" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Shipping Address</h3>
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label>Street Address</label>
+                  <input type="text" required />
+                </div>
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" required />
+                </div>
+                <div class="form-group">
+                  <label>State</label>
+                  <select required>
+                    <option value="">Select State</option>
+                    <option value="CA">California</option>
+                    <option value="NY">New York</option>
+                    <option value="TX">Texas</option>
+                    <option value="FL">Florida</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>ZIP Code</label>
+                  <input type="text" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Payment Information</h3>
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label>Card Number</label>
+                  <input
+                    type="text"
+                    placeholder="1234 5678 9012 3456"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Expiry Date</label>
+                  <input type="text" placeholder="MM/YY" required />
+                </div>
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="text" placeholder="123" required />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-summary" id="checkoutSummary">
+            <!-- Order summary will be loaded here -->
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+      <div class="container">
+        <h1 class="page-title">About TechStore</h1>
+        <p
+          style="
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.25rem;
+            color: #64748b;
+          "
+        >
+          About page content would go here. This is a demo.
         </p>
-        <button class="shop-now-btn" onclick="scrollToProducts()">
-          Shop Now
-        </button>
       </div>
-    </section>
+    </div>
 
-    <!-- Categories -->
-    <section class="categories">
+    <!-- Contact Page -->
+    <div id="contact" class="page">
       <div class="container">
-        <h2>Shop by Category</h2>
-        <div class="category-grid">
-          <div class="category-card" onclick="filterProducts('smartphones')">
-            <div class="category-icon">📱</div>
-            <h3>Smartphones</h3>
-            <p>Latest models</p>
-          </div>
-          <div class="category-card" onclick="filterProducts('laptops')">
-            <div class="category-icon">💻</div>
-            <h3>Laptops</h3>
-            <p>High performance</p>
-          </div>
-          <div class="category-card" onclick="filterProducts('headphones')">
-            <div class="category-icon">🎧</div>
-            <h3>Headphones</h3>
-            <p>Premium audio</p>
-          </div>
-          <div class="category-card" onclick="filterProducts('watches')">
-            <div class="category-icon">⌚</div>
-            <h3>Smart Watches</h3>
-            <p>Stay connected</p>
-          </div>
-        </div>
+        <h1 class="page-title">Contact Us</h1>
+        <p
+          style="
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.25rem;
+            color: #64748b;
+          "
+        >
+          Contact page content would go here. This is a demo.
+        </p>
       </div>
-    </section>
-
-    <!-- Products -->
-    <section class="products" id="products">
-      <div class="container">
-        <h2>Featured Products</h2>
-        <div class="product-grid" id="productGrid">
-          <!-- Products will be loaded here -->
-        </div>
-      </div>
-    </section>
+    </div>
 
     <!-- Newsletter -->
     <section class="newsletter">
@@ -556,6 +1053,7 @@
           price: 1199,
           oldPrice: 1299,
           category: "smartphones",
+          brand: "Apple",
           icon: "📱",
         },
         {
@@ -565,6 +1063,7 @@
           price: 2499,
           oldPrice: 2699,
           category: "laptops",
+          brand: "Apple",
           icon: "💻",
         },
         {
@@ -574,6 +1073,7 @@
           price: 249,
           oldPrice: 279,
           category: "headphones",
+          brand: "Apple",
           icon: "🎧",
         },
         {
@@ -583,6 +1083,7 @@
           price: 799,
           oldPrice: 849,
           category: "watches",
+          brand: "Apple",
           icon: "⌚",
         },
         {
@@ -592,6 +1093,7 @@
           price: 899,
           oldPrice: 999,
           category: "smartphones",
+          brand: "Samsung",
           icon: "📱",
         },
         {
@@ -601,24 +1103,73 @@
           price: 1299,
           oldPrice: 1399,
           category: "laptops",
+          brand: "Dell",
           icon: "💻",
+        },
+        {
+          id: 7,
+          name: "Sony WH-1000XM5",
+          description: "Industry-leading noise cancelling headphones",
+          price: 399,
+          oldPrice: 449,
+          category: "headphones",
+          brand: "Sony",
+          icon: "🎧",
+        },
+        {
+          id: 8,
+          name: "Samsung Galaxy Watch 6",
+          description: "Advanced smartwatch with health monitoring",
+          price: 329,
+          oldPrice: 369,
+          category: "watches",
+          brand: "Samsung",
+          icon: "⌚",
         },
       ];
 
       let cart = [];
-      let currentFilter = "all";
+      let currentPage = "home";
+      let currentFilter = {};
 
-      // Load products
-      function loadProducts(filter = "all") {
-        const productGrid = document.getElementById("productGrid");
-        const filteredProducts =
-          filter === "all"
-            ? products
-            : products.filter((p) => p.category === filter);
+      // Navigation
+      function showPage(page) {
+        // Hide all pages
+        document
+          .querySelectorAll(".page")
+          .forEach((p) => p.classList.remove("active"));
 
-        productGrid.innerHTML = filteredProducts
-          .map(
-            (product) => `
+        // Remove active class from nav links
+        document
+          .querySelectorAll(".nav-links a")
+          .forEach((a) => a.classList.remove("active"));
+
+        // Show selected page
+        document.getElementById(page).classList.add("active");
+
+        // Add active class to corresponding nav link if event exists
+        const navLinks = document.querySelectorAll(".nav-links a");
+        navLinks.forEach((link) => {
+          if (
+            link.textContent.toLowerCase() === page ||
+            (page === "home" && link.textContent.toLowerCase() === "home")
+          ) {
+            link.classList.add("active");
+          }
+        });
+
+        currentPage = page;
+
+        // Load page-specific content
+        if (page === "home") loadFeaturedProducts();
+        if (page === "products") loadAllProducts();
+        if (page === "cart") loadCart();
+        if (page === "checkout") loadCheckoutSummary();
+      }
+
+      // Product display functions
+      function createProductCard(product) {
+        return `
                 <div class="product-card">
                     <div class="product-image">${product.icon}</div>
                     <div class="product-info">
@@ -633,21 +1184,94 @@
                         </button>
                     </div>
                 </div>
-            `
-          )
+            `;
+      }
+
+      function loadFeaturedProducts() {
+        const featuredProducts = products.slice(0, 4);
+        document.getElementById("featuredProducts").innerHTML = featuredProducts
+          .map(createProductCard)
           .join("");
       }
 
-      // Filter products
-      function filterProducts(category) {
-        currentFilter = category;
-        loadProducts(category);
+      function loadAllProducts() {
+        let filteredProducts = products;
+
+        // Apply filters
+        if (currentFilter.category) {
+          filteredProducts = filteredProducts.filter(
+            (p) => p.category === currentFilter.category
+          );
+        }
+        if (currentFilter.brand) {
+          filteredProducts = filteredProducts.filter(
+            (p) => p.brand === currentFilter.brand
+          );
+        }
+        if (currentFilter.priceRange) {
+          const [min, max] = currentFilter.priceRange.split("-").map(Number);
+          filteredProducts = filteredProducts.filter(
+            (p) => p.price >= min && p.price <= max
+          );
+        }
+        if (currentFilter.search) {
+          filteredProducts = filteredProducts.filter(
+            (p) =>
+              p.name
+                .toLowerCase()
+                .includes(currentFilter.search.toLowerCase()) ||
+              p.description
+                .toLowerCase()
+                .includes(currentFilter.search.toLowerCase())
+          );
+        }
+
+        document.getElementById("allProducts").innerHTML = filteredProducts
+          .map(createProductCard)
+          .join("");
       }
 
-      // Add to cart
+      // Filter functions
+      function filterProducts(category = null) {
+        if (category) {
+          currentFilter.category = category;
+          if (document.getElementById("categoryFilter")) {
+            document.getElementById("categoryFilter").value = category;
+          }
+        } else {
+          if (document.getElementById("categoryFilter")) {
+            currentFilter.category =
+              document.getElementById("categoryFilter").value;
+          }
+          if (document.getElementById("brandFilter")) {
+            currentFilter.brand = document.getElementById("brandFilter").value;
+          }
+          if (document.getElementById("priceFilter")) {
+            currentFilter.priceRange =
+              document.getElementById("priceFilter").value;
+          }
+        }
+        loadAllProducts();
+      }
+
+      function searchProducts() {
+        currentFilter.search = document.getElementById("searchInput").value;
+        if (currentPage === "products") {
+          loadAllProducts();
+        }
+      }
+
+      // Cart functions
       function addToCart(productId) {
         const product = products.find((p) => p.id === productId);
-        cart.push(product);
+        const existingItem = cart.find((item) => item.id === productId);
+
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ ...product, quantity: 1 });
+        }
+
         updateCartCount();
         showModal(
           "Product Added!",
@@ -655,48 +1279,179 @@
         );
       }
 
-      // Update cart count
-      function updateCartCount() {
-        document.getElementById("cartCount").textContent = cart.length;
+      function removeFromCart(productId) {
+        cart = cart.filter((item) => item.id !== productId);
+        updateCartCount();
+        if (currentPage === "cart") loadCart();
       }
 
-      // Open cart
-      function openCart() {
-        if (cart.length === 0) {
-          showModal(
-            "Cart Empty",
-            "Your cart is currently empty. Add some products!"
-          );
-        } else {
-          const cartItems = cart.map((item) => item.name).join(", ");
-          const total = cart.reduce((sum, item) => sum + item.price, 0);
-          showModal("Your Cart", `Items: ${cartItems}\nTotal: $${total}`);
+      function updateQuantity(productId, change) {
+        const item = cart.find((item) => item.id === productId);
+        if (item) {
+          item.quantity += change;
+          if (item.quantity <= 0) {
+            removeFromCart(productId);
+          } else {
+            updateCartCount();
+            if (currentPage === "cart") loadCart();
+          }
         }
       }
 
-      // Show modal
+      function updateCartCount() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        document.getElementById("cartCount").textContent = totalItems;
+      }
+
+      function loadCart() {
+        const cartItemsContainer = document.getElementById("cartItems");
+        const cartSummaryContainer = document.getElementById("cartSummary");
+
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = `
+                    <div style="text-align: center; padding: 3rem; color: #64748b;">
+                        <h3>Your cart is empty</h3>
+                        <p>Add some products to get started!</p>
+                        <button class="shop-now-btn" onclick="showPage('products')">Shop Now</button>
+                    </div>
+                `;
+          cartSummaryContainer.innerHTML = "";
+          return;
+        }
+
+        cartItemsContainer.innerHTML = cart
+          .map(
+            (item) => `
+                <div class="cart-item">
+                    <div class="cart-item-image">${item.icon}</div>
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">$${item.price}</div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeFromCart(${item.id})">Remove</button>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+
+        const subtotal = cart.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+        const shipping = subtotal > 100 ? 0 : 10;
+        const tax = subtotal * 0.08;
+        const total = subtotal + shipping + tax;
+
+        cartSummaryContainer.innerHTML = `
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$${subtotal.toFixed(2)}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>${
+                      shipping === 0 ? "Free" : "$" + shipping.toFixed(2)
+                    }</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span>$${tax.toFixed(2)}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Total</span>
+                    <span>$${total.toFixed(2)}</span>
+                </div>
+                <button class="checkout-btn" onclick="showPage('checkout')">Proceed to Checkout</button>
+            `;
+      }
+
+      function loadCheckoutSummary() {
+        const checkoutSummaryContainer =
+          document.getElementById("checkoutSummary");
+
+        if (cart.length === 0) {
+          checkoutSummaryContainer.innerHTML = `
+                    <h3>No items in cart</h3>
+                    <p>Add items to your cart first.</p>
+                `;
+          return;
+        }
+
+        const subtotal = cart.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+        const shipping = subtotal > 100 ? 0 : 10;
+        const tax = subtotal * 0.08;
+        const total = subtotal + shipping + tax;
+
+        checkoutSummaryContainer.innerHTML = `
+                <h3>Order Summary</h3>
+                ${cart
+                  .map(
+                    (item) => `
+                    <div class="summary-row">
+                        <span>${item.name} x${item.quantity}</span>
+                        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `
+                  )
+                  .join("")}
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$${subtotal.toFixed(2)}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>${
+                      shipping === 0 ? "Free" : "$" + shipping.toFixed(2)
+                    }</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span>$${tax.toFixed(2)}</span>
+                </div>
+                <div class="summary-row">
+                    <span><strong>Total</strong></span>
+                    <span><strong>$${total.toFixed(2)}</strong></span>
+                </div>
+                <button type="submit" class="checkout-btn">Complete Order</button>
+            `;
+      }
+
+      function processOrder(event) {
+        event.preventDefault();
+        alert(
+          "Order processed successfully! You will receive a confirmation email shortly. This is a demo - no actual payment was charged."
+        );
+        cart = [];
+        updateCartCount();
+        showPage("home");
+      }
+
+      // Modal functions
       function showModal(title, message) {
         document.getElementById("modalTitle").textContent = title;
         document.getElementById("modalMessage").textContent = message;
         document.getElementById("modal").style.display = "block";
       }
 
-      // Close modal
       function closeModal() {
         document.getElementById("modal").style.display = "none";
-      }
-
-      // Scroll to products
-      function scrollToProducts() {
-        document.getElementById("products").scrollIntoView({
-          behavior: "smooth",
-        });
       }
 
       // Newsletter subscription
       function subscribeNewsletter(event) {
         event.preventDefault();
-        const email = event.target.email.value;
+        const email = event.target.querySelector('input[type="email"]').value;
         showModal(
           "Subscribed!",
           `Thank you! ${email} has been subscribed to our newsletter.`
@@ -713,7 +1468,10 @@
       };
 
       // Initialize
-      loadProducts();
+      document.addEventListener("DOMContentLoaded", function () {
+        loadFeaturedProducts();
+        updateCartCount();
+      });
     </script>
   </body>
 </html>
